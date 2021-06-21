@@ -6,6 +6,6 @@ This src got sold many times and now used for some p2c.
 Leaked by riks
 The src is not full, i will maybe leak the complet one soon.
 
-Owner of nuclear brand (who got the src) saying this can't be update, false ....
+Owner of nuclear brand (who got the src, they stoled name of the original brand, nameless didn't allowed him to use this name) saying this can't be update, false ....
 Update sig,offset,process event index and postrender index, i just removed some code to avoid copy-paste.
 Im will leak this week the updated version of it with all features.If they try keep selling it, the src is public gl.
