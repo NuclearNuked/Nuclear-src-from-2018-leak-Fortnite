@@ -1569,18 +1569,6 @@ wstring GetObjectNameW(UObject* obj)
 	return GetGNameByIdW(id);
 }
 
-uint32_t GetVtableSize(void* object)
-{
-	auto vtable = *(void***)(object);
-	int i = 0;
-
-	for (; vtable[i]; i++)
-		__noop();
-
-	return i;
-}
-
-vector<void*>* GHookedObjects;
 
 D3DMATRIX Matrix(FRotator rot, FVector origin = { 0, 0, 0 })
 {
@@ -1617,36 +1605,6 @@ D3DMATRIX Matrix(FRotator rot, FVector origin = { 0, 0, 0 })
 	matrix.m[3][3] = 1.f;
 
 	return matrix;
-}
-
-bool IsObjectHooked(void* obj) 
-{
-	for (auto x : *GHookedObjects)
-	{
-		if (x == obj)
-			return true;
-	}
-
-	return false;
-}
-
-void SwapVtable(void* obj, uint32_t index, void* hook)
-{
-	if (!IsObjectHooked(obj))
-	{
-		auto currVt = *(void**)(obj);
-		auto size = GetVtableSize(obj);
-		dprintf(E("VT has %d functions"), size);
-		auto newVt = new uintptr_t[size];
-		mymemcpy(newVt, currVt, size * 0x8);
-		newVt[index] = (uintptr_t)hook;
-		*(uintptr_t**)(obj) = newVt;
-		GHookedObjects->push_back(obj);
-	}
-	else
-	{
-		dprintf(E("0x%p is already hooked.."), obj);
-	}
 }
 
 class UFunction : public UStruct
@@ -1847,7 +1805,7 @@ namespace G
 	bool AimbotTargetSentries;
 	int ItemRarityLevel = 7;
 	UObject* CameraManager;
-	uintptr_t LastTimePEHookCalled;
+	uintptr_t LastTimePECalled;
 	bool NoRecoil = true;
 	bool InfAmmo = true;
 }
