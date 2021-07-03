@@ -11,5 +11,5 @@ Update sig,offset,process event index and postrender index, i just removed some 
 I will leak this week the updated version of it with all features.The src is public gl.
 
 
-Update: A lot of paster using the source, complet & updated source will get released within 2 days on UC and on a new repo.
-Know p2c using this source: ELITE, Nuclear.
+Update: A lot of paster using the source, complet & updated source will get released within 2 days on UC and on a new github repo.
+Know P2C using this source: ELITE, Nuclear.
