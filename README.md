@@ -13,4 +13,4 @@ I will leak this week the updated version of it with all features.The src is pub
 
 Update: A lot of paster using the source, complet & updated source will get released within 2 days on UC and on a new github repo.
 Know P2C using this source: ELITE, Nuclear.
-Update2: Source already got leaked by harvey enjoy.
+Update2: Complet source alr got leaked by someone else, enjoy pasting.
